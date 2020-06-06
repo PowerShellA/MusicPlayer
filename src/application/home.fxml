@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomeController">
+   <children>
+      <SplitPane dividerPositions="0.25125208681135225" prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="300.0">
+               <children>
+                  <VBox layoutX="94.0" layoutY="420.0" spacing="10.0" AnchorPane.bottomAnchor="8.0">
+                     <children>
+                        <Button layoutX="84.0" layoutY="342.0" mnemonicParsing="false" onAction="#doPlay" prefHeight="48.0" prefWidth="110.0" text="播放" />
+                        <Button layoutX="84.0" layoutY="403.0" mnemonicParsing="false" onAction="#doPause" prefHeight="48.0" prefWidth="110.0" text="停止" />
+                        <Button layoutX="84.0" layoutY="471.0" mnemonicParsing="false" onAction="#doEdit" prefHeight="48.0" prefWidth="110.0" text="修改歌曲信息" />
+                     </children>
+                  </VBox>
+                  <Label layoutX="8.0" layoutY="102.0" prefHeight="20.0" prefWidth="79.0" text="正在播放：" />
+                  <HBox layoutX="48.0" layoutY="49.0" spacing="15.0">
+                     <children>
+                        <Button layoutX="48.0" layoutY="49.0" mnemonicParsing="false" onAction="#SelectDir" prefHeight="30.0" prefWidth="110.0" text="选取文件夹" />
+                        <Button layoutX="187.0" layoutY="49.0" mnemonicParsing="false" onAction="#read" prefHeight="30.0" prefWidth="110.0" text="读取" />
+                     </children>
+                  </HBox>
+                  <TextField fx:id="mulu" layoutX="47.0" layoutY="14.0" onAction="#read" prefHeight="30.0" prefWidth="237.0" />
+                  <Label layoutX="8.0" layoutY="19.0" text="目录：" />
+                  <Label fx:id="NowPlaying" layoutX="8.0" layoutY="122.0" prefHeight="20.0" prefWidth="284.0" text="暂无曲目" />
+                  <ImageView fx:id="NowAlbum" fitHeight="268.0" fitWidth="273.0" layoutX="12.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="UsersTable" layoutX="412.0" layoutY="43.0" prefHeight="555.0" prefWidth="893.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="43.0">
+                    <columns>
+                      <TableColumn fx:id="Name" prefWidth="75.0" text="歌曲名" />
+                      <TableColumn fx:id="Singer" prefWidth="75.0" text="演唱者" />
+                        <TableColumn fx:id="Album" prefWidth="98.0" text="专辑" />
+                        <TableColumn fx:id="Format" prefWidth="38.0" text="格式" />
+                        <TableColumn fx:id="Time1" prefWidth="108.0" text="时长" />
+                        <TableColumn fx:id="Path" prefWidth="256.0" text="路径" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <HBox layoutX="22.0" layoutY="13.0" prefHeight="30.0" prefWidth="887.0" spacing="10.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <children>
+                        <Label layoutX="22.0" layoutY="19.0" text="搜索：">
+                           <padding>
+                              <Insets top="4.0" />
+                           </padding>
+                        </Label>
+                        <ComboBox fx:id="SearchField" layoutX="118.0" layoutY="13.0" prefHeight="30.0" prefWidth="181.0" />
+                        <TextField fx:id="SearchText" layoutX="332.0" layoutY="14.0" prefHeight="30.0" prefWidth="464.0" />
+                        <Button layoutX="764.0" layoutY="14.0" mnemonicParsing="false" onAction="#doSearch" prefHeight="30.0" prefWidth="162.0" text="搜索" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
